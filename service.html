@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS DEC PAGE - CEO Message: LA Fires</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Defined color palette
+                        'ais-dark': '#002c45',       // Dark Header/Sidebar Background
+                        'ais-blue': '#024079',       // Main Accent Blue/Text Color
+                        'ais-light-blue': '#6896c4', // Secondary Light Blue
+                        'ais-accent': '#f2b408',     // Yellow Accent Color
+                        'ais-text-dark': '#393939',  // Body Text Color
+                        'ais-bg': '#fefefe',         // Page Background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to achieve the specific screenshot look */
+        body {
+            background-color: #f0f2f5; /* Light grey background for surrounding canvas */
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Styling for the main content block to look like a single page document */
+        .document-container {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fixed Sidebar for desktop */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        input {
+            color: black !important;
+        }
+
+        ::placeholder {
+            color: black !important;
+        }
+
+        /* Two-column text layout for the article content on medium/large screens */
+        @media (min-width: 1024px) {
+            .article-content {
+                column-count: 2;
+                column-gap: 4rem;
+            }
+        }
+
+        /* Styling for the large header title */
+        .header-title {
+            line-height: 1.1;
+            font-weight: 800; /* Extra bold */
+            color: white;
+        }
+
+        /* Specific styling for the active navigation link */
+        .nav-link.active {
+            background-color: #FFA500;
+            border-left: 5px solid theme('colors.ais-accent');
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Document Container now wraps everything, but doesn't set the flex direction -->
+    <div class="document-container min-h-screen">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 50px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <a href="index.html" class="nav-link flex justify-between items-center p-3 rounded-lg transition duration-200">
+                        CEO MESSAGE
+                    </a>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">LA Fires</p>
+                    </div>
+
+                    <a href="sales.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        SALES
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ CONTEST</p>
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="service.html" class="nav-link active block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        SERVICE
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        CARRIER NEWS
+                    </a>
+
+                    <a href="#" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        ANNIVERSARIES
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Service & Operations:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 5%;">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <!-- Placeholder for Mark Ribisi's Image -->
+                                    <img src="images/Picture5.png" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">Lani Elkin</p>
+                                    <p class="text-sm opacity-90 leading-tight">SVP Admin & Service Ops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">AI Virtual Assistant Expansion:</h1>
+
+                        <!-- Main Text Section - Columnar on Desktop -->
+                        <div class="article-content text-base leading-relaxed">
+                            <p class="mb-6">
+                                Our AI Virtual Assistant, Nicole, is now taking auto policy
+                                change requests during business hours! As of March 7th,
+                                customers may choose to speak with Nicole during business hours after waiting on hold for over 2 minutes.
+                                Just like after hours, customers can add/remove drivers,
+                                add/remove/replace vehicles and update addresses.
+                            </p>
+
+                            <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Customer Experience Surveys:</h1>
+
+                            <p class="mb-6">
+                                We are pleased to announce that we are transitioning
+                                our sales and service Customer Experience Surveys
+                                from InMoment to Forsta. Forsta is a leading Voice of the Customer (VOC) platform, designed to improve our administrative processes and help us gain deeper
+                                insight into our customers.
+                            </p>
+
+                            <p>With Forsta, we gain:</p>
+
+                            <p>✅ Enhanced surveys - More streamlined, saving customers' time</p>
+                            <p>✅ Advanced Insights - Deeper, more actionable customer data with PowerBI integration</p>
+                            <p>✅ Automation - Faster, more efficient feedback collection and analysis</p>
+                            <p>✅ User-Friendly Experience - An intuitive interface for leaders that makes it easier to navigate and use</p>
+
+                            <!-- Article Image Block -->
+                            <div class="w-full rounded-xl mb-6 overflow-hidden bg-red-800 flex items-center justify-center" style="background-color: #fff;">
+                                <img src="images/Picture6.png" style="height: 500px;" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- START SECTION: Sales Brags with Gradient Background -->
+                    <div class="sales-brags-gradient text-white pt-12 pb-20">
+                        <!-- Inner container to restore padding from the main content -->
+                        <section>
+                            <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; margin-left: 50px; margin-right: 50px;">Service Brags:</h2>
+
+                            <!-- Brag Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="padding-right: 50px; padding-left: 50px;">
+
+                                <!-- Brag Card 1 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue erat a dolor semper porttitor. Morbi massa nibh, porta quis mi eu, dictum rhoncus erat."</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 2 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nam in tristique risus. Donec condimentum felis risus, vitae malesuada urna consequat non. Pellentesque efficitur ex ac aliquet elementum.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 3 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nullam vulputate odio sed justo ultricies efficitur. Praesent sem felis, tincidunt quis cursus eu, luctus sed ligula.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 4 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nullam vulputate odio sed justo ultricies efficitur. Praesent sem felis, tincidunt quis cursus eu, luctus sed ligula.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 5 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue erat a dolor semper porttitor. Morbi massa nibh, porta quis mi eu, dictum rhoncus erat.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 6 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nam in tristique risus. Donec condimentum felis risus, vitae malesuada urna consequat non. Pellentesque efficitur ex ac aliquet elementum.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- END SECTION: Sales Brags with Gradient Background -->
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <img style="width: 100%;" src="images/footer.png" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+                // Placeholder for future interactivity if we decide to implement page switching or mobile menu toggles.
+    </script>
+</body>
+</html>

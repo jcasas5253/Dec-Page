@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS DEC PAGE - SALES</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Defined color palette
+                        'ais-dark': '#002c45',       // Dark Header/Sidebar Background
+                        'ais-blue': '#024079',       // Main Accent Blue/Text Color
+                        'ais-light-blue': '#6896c4', // Secondary Light Blue
+                        'ais-accent': '#f2b408',     // Yellow Accent Color
+                        'ais-text-dark': '#393939',  // Body Text Color
+                        'ais-bg': '#fefefe',         // Page Background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to achieve the specific screenshot look */
+        body {
+            background-color: #f0f2f5; /* Light grey background for surrounding canvas */
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Styling for the main content block to look like a single page document */
+        .document-container {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fixed Sidebar for desktop */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        input {
+            color: black !important;
+        }
+
+        ::placeholder {
+            color: black !important;
+        }
+
+        /* Specific list item style for leaderboards */
+        .leaderboard-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.25rem 0;
+        }
+
+        .leaderboard-rank {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 900; /* font-black */
+            color: black;
+            width: 1.5rem;
+            text-align: left;
+            flex-shrink: 0;
+            background-color: #FFA500;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .leaderboard-name {
+            flex-grow: 1;
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            border-bottom: 1px solid theme('colors.gray.200');
+            padding-top: 4px;
+            padding-left: 15px;
+            background-color: #fff;
+            color: black;
+        }
+
+        .leaderboard-value {
+            color: black;
+            font-weight: 800; /* font-extrabold */
+            font-size: 1.25rem; /* text-xl */
+            flex-shrink: 0;
+            background-color: #FFA500;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* Two-column text layout for the article content on medium/large screens */
+        @media (min-width: 1024px) {
+            .article-content {
+                column-count: 2;
+                column-gap: 4rem;
+            }
+        }
+
+        /* Styling for the large header title */
+        .header-title {
+            line-height: 1.1;
+            font-weight: 800; /* Extra bold */
+            color: white;
+        }
+
+        /* Specific styling for the active navigation link */
+        .nav-link.active {
+            background-color: #FFA500;
+            border-left: 5px solid theme('colors.ais-accent');
+        }
+
+        /* Custom style for the Sales Tip section background */
+        .sales-tip-bg {
+            background-color: rgb(65, 107, 159);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Document Container now wraps everything, but doesn't set the flex direction -->
+    <div class="document-container min-h-screen">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 50px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <a href="index.html" class="nav-link flex justify-between items-center p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        CEO MESSAGE
+                    </a>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">LA Fires</p>
+                    </div>
+
+                    <a href="sales.html" class="nav-link active block p-3 rounded-lg transition duration-200">
+                        SALES
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ CONTEST</p>
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="service.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        SERVICE
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        CARRIER NEWS
+                    </a>
+
+                    <a href="#" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        ANNIVERSARIES
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Let's Talk Sales:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 5%;">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <!-- Placeholder for Mark Ribisi's Image -->
+                                    <img src="images/Picture3.png" alt="Mark Ribisi Profile" onerror="this.onerror=null; this.src='https://placehold.co/80x80/ffffff/000000?text=MR'" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">Mark Casas</p>
+                                    <p class="text-sm opacity-90 leading-tight">Senior Vice President</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Starting 2025</h1>
+
+                        <!-- Main Text Section - Columnar on Desktop -->
+                        <div class="article-content text-base leading-relaxed">
+                            <p class="mb-6">
+                                We are off to another great start in 2025, finishing with
+                                10,916 sales representing a 108% improvement over
+                                January 2024. Auto conversion in California is close to
+                                50% which is a 130% increase over prior year, when we
+                                averaged 38%. Without a doubt, we are beginning to see
+                                a decline in consumer demand and for the first time in
+                                several months, we experienced a decrease in quote
+                                volume.
+                            </p>
+
+                            <p class="mb-6">
+                                We are now beginning to automate fllow-up on all leads
+                                using AI to assist with moving online Customers to
+                                inbound phone calls to increase quote volume. We are also beginning to purchase leads in addition to
+                                increasing our spend in digital marketing, both inside and outside California. With our marketing efforts we will be able to sustain record growth in 2025.
+                                With our marketing efforts we will be able to sustain record growth in 2025.
+                            </p>
+
+                            <p class="mb-6">
+                                Our Commercial team is setting new records for production. They have achieved over $1 million in written premium 3 months in a row! How's that for a trifecta.
+                                I know they are never satisfied with past performance so I'm sure they are working on hitting $1.5
+                                million once we add another producer to the team. Congratulations!
+                            </p>
+
+                            <div class="text-center mt-12 pb-1 break-inside-avoid">
+                                <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">10,916</h1>
+                                <p class="text-lg font-semibold text-ais-text-dark">Combined sales in March</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sales Tip Block - MODIFIED FOR FULL BLEED -->
+                    <!-- Used -mx- to push to the side edges, matching the article image block pattern -->
+                    <div class="sales-tip-bg text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12" style="margin-left: 0; margin-right: 0;">
+                        <div class="flex items-center space-x-4">
+                            <!-- Placeholder for an icon/image associated with the tip -->
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-ais-accent flex items-center justify-center">
+                                <svg class="w-6 h-6 text-ais-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v14L9 19z"></path></svg>
+                            </div>
+                            <div>
+                                <h1 class="text-xl sm:text-2xl font-black mb-1 leading-tight">Sales Tip of The Month: Make Every Homeowners Call Count</h1>
+                                <p class="text-sm opacity-90">When you get a customer on the line looking for homeowner coverage and we don't have a standard market available- don't stop there. Take an extra minute to educate the customer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales Performance Section (Top 10 & Top 3) - NOW SIDE-BY-SIDE -->
+                    <section class="mt-12" style="background-color: rgb(0 44 69); padding: 30px;">
+
+                        <!-- Grid Container for Side-by-Side Layout (Single column on small, two columns on large) -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+
+                            <!-- LEFT COLUMN: Top 10 Producers -->
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; ">TOP 10 - PERSONAL LINES</h2>
+
+                                <div class="space-y-3 text-ais-text-dark">
+                                    <!-- List Item Structure (Using custom styles for consistency) -->
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">1</span>
+                                        <span class="leaderboard-name">Sarah Johnson</span>
+                                        <span class="leaderboard-value">125</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">2</span>
+                                        <span class="leaderboard-name">Michael Lee</span>
+                                        <span class="leaderboard-value">118</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">3</span>
+                                        <span class="leaderboard-name">David Chen</span>
+                                        <span class="leaderboard-value">112</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">4</span>
+                                        <span class="leaderboard-name">Jessica Adams</span>
+                                        <span class="leaderboard-value">109</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">5</span>
+                                        <span class="leaderboard-name">Kevin Patel</span>
+                                        <span class="leaderboard-value">105</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">6</span>
+                                        <span class="leaderboard-name">Emily Rodriguez</span>
+                                        <span class="leaderboard-value">98</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">7</span>
+                                        <span class="leaderboard-name">Ryan Baker</span>
+                                        <span class="leaderboard-value">95</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">8</span>
+                                        <span class="leaderboard-name">Maria Garcia</span>
+                                        <span class="leaderboard-value">92</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">9</span>
+                                        <span class="leaderboard-name">Thomas Brown</span>
+                                        <span class="leaderboard-value">90</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">10</span>
+                                        <span class="leaderboard-name">Olivia Wilson</span>
+                                        <span class="leaderboard-value">88</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN: Top 3 Team Leaders -->
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; ">TOP 3 - COMMERCIAL LINES</h2>
+
+                                <!-- Using the same list item structure as Top 10 for consistency -->
+                                <div class="space-y-3 text-ais-text-dark">
+                                    <!-- 1st Place - Added subtle visual emphasis -->
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">1</span>
+                                        <span class="leaderboard-name">Sarah Johnson</span>
+                                        <span class="leaderboard-value">125</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">2</span>
+                                        <span class="leaderboard-name">Michael Lee</span>
+                                        <span class="leaderboard-value">118</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">3</span>
+                                        <span class="leaderboard-name">David Chen</span>
+                                        <span class="leaderboard-value">112</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- START SECTION: Sales Brags with Gradient Background -->
+                    <div class="sales-brags-gradient text-white pt-12 pb-20">
+                        <!-- Inner container to restore padding from the main content -->
+                        <section>
+                            <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; margin-left: 50px; margin-right: 50px;">Sales Brags:</h2>
+
+                            <!-- Brag Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="padding-right: 50px; padding-left: 50px;">
+
+                                <!-- Brag Card 1 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue erat a dolor semper porttitor. Morbi massa nibh, porta quis mi eu, dictum rhoncus erat."</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 2 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nam in tristique risus. Donec condimentum felis risus, vitae malesuada urna consequat non. Pellentesque efficitur ex ac aliquet elementum.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 3 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nullam vulputate odio sed justo ultricies efficitur. Praesent sem felis, tincidunt quis cursus eu, luctus sed ligula.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 4 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nullam vulputate odio sed justo ultricies efficitur. Praesent sem felis, tincidunt quis cursus eu, luctus sed ligula.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 5 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue erat a dolor semper porttitor. Morbi massa nibh, porta quis mi eu, dictum rhoncus erat.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 6 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic text-sm mb-4">Nam in tristique risus. Donec condimentum felis risus, vitae malesuada urna consequat non. Pellentesque efficitur ex ac aliquet elementum.</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue text-sm">[Employee Name]</p>
+                                            <p class="text-xs text-gray-500">[Department Name]</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- END SECTION: Sales Brags with Gradient Background -->
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center pt-8">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <!-- Removed fixed width and made it span the available content width -->
+                        <img class="w-full" src="images/footer.png" alt="Footer Graphic" onerror="this.onerror=null; this.src='https://placehold.co/1000x50/f0f2f5/393939?text=AIS+DEC+PAGE+FOOTER'" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+                // Placeholder for future interactivity if we decide to implement page switching or mobile menu toggles.
+    </script>
+</body>
+</html>

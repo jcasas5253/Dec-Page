@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS DEC PAGE - CEO Message: LA Fires</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Defined color palette
+                        'ais-dark': '#002c45',       // Dark Header/Sidebar Background
+                        'ais-blue': '#024079',       // Main Accent Blue/Text Color
+                        'ais-light-blue': '#6896c4', // Secondary Light Blue
+                        'ais-accent': '#f2b408',     // Yellow Accent Color
+                        'ais-text-dark': '#393939',  // Body Text Color
+                        'ais-bg': '#fefefe',         // Page Background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to achieve the specific screenshot look */
+        body {
+            background-color: #f0f2f5; /* Light grey background for surrounding canvas */
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Styling for the main content block to look like a single page document */
+        .document-container {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fixed Sidebar for desktop */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        input{
+            color: black !important;
+        }
+
+        ::placeholder {
+            color: black !important;
+        }
+
+        /* Two-column text layout for the article content on medium/large screens */
+        @media (min-width: 1024px) {
+            .article-content {
+                column-count: 2;
+                column-gap: 4rem;
+            }
+        }
+
+        /* Styling for the large header title */
+        .header-title {
+            line-height: 1.1;
+            font-weight: 800; /* Extra bold */
+            color: white;
+        }
+
+        /* Specific styling for the active navigation link */
+        .nav-link.active {
+            background-color: #FFA500;
+            border-left: 5px solid theme('colors.ais-accent');
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Document Container now wraps everything, but doesn't set the flex direction -->
+    <div class="document-container min-h-screen">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 50px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <a href="index.html" class="nav-link active flex justify-between items-center p-3 rounded-lg transition duration-200">
+                        CEO MESSAGE
+                    </a>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">LA Fires</p>
+                    </div>
+
+                    <a href="sales.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        SALES
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ CONTEST</p>
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="service.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        SERVICE
+                    </a>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1">+ BRAGS</p>
+                    </div>
+
+                    <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        CARRIER NEWS
+                    </a>
+
+                    <a href="#" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                        ANNIVERSARIES
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">A Message from the President:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 5%;">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <!-- Placeholder for Mark Ribisi's Image -->
+                                    <img src="images/Picture1.png" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">Mark Ribisi</p>
+                                    <p class="text-sm opacity-90 leading-tight">President & CEO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">LA Fires</h1>
+
+                        <!-- Main Text Section - Columnar on Desktop -->
+                        <div class="article-content text-base leading-relaxed">
+                            <p class="mb-6">On Tuesday, January 7th, the unimaginable happened. A strong Santa Ana wind event coupled with a historically dry winter, created a tinderbox in Southern California. Late in the morning, a small fire in the Santa Monica mountains quickly became a firestorm sweeping through Pacific Palisades and parts of Malibu.</p>
+
+                            <p class="mb-6">Videos of homes burning on Pacific Coast Highway and people desperate to escape were gut-wrenching. Later that evening as the wind approached 80-90 miles per hour, a fire started in Eaton Canyon east of Altadena and north of Pasadena and once again, quickly became a firestorm, overwhelming the stretched firefighting resources in the area. Additional fires in Sylmar and the Hollywood Hills added to the overall angst of the event.</p>
+
+                            <!-- Article Image Block -->
+                            <div class="w-full h-48 sm:h-64 rounded-xl mb-6 overflow-hidden bg-red-800 shadow-xl flex items-center justify-center" style="height: 100%;">
+                                <img src="images/Picture2.png" />
+                            </div>
+
+                            <p class="mb-6">The fires have been a devastating force, causing widespread destruction, displacement, and disillusionment among civic leaders. As an insurance company and agency, we play a crucial role in aiding recovery and rebuilding efforts by addressing the immediate needs of our affected policyholders and implementing longer-term strategies to mitigate future risks.</p>
+
+                            <p class="mb-6">From Mercury's perspective, Gabe Tirador, our CEO, said it best, "For us, this is 'Game Time.' It is a great opportunity to demonstrate our purpose: 'We help our customers prepare for, and overcome life's unexpected challenges."</p>
+
+                            <p class="mb-6">Insurance companies, including Mercury, mobilized disaster response teams to assist policyholders in filing claims and expediting the process. Claims adjusters were deployed to assess damage, estimate repair costs, and determine appropriate compensation, ensuring swift claims processing, reducing the financial burden on those affected. Additional Living Expenses (ALE) payments were disbursed, covering temporary housing and other necessities while policyholders rebuild their homes.</p>
+
+                            <p class="mb-6">Going forward, risk mitigation will play a larger role in access to California homeowners insurance products. Most insurance companies promote fire-resistant building practices through incentives like premium discounts, reducing the overall risk of fire damage. They also invest in community education and preparedness programs, raising awareness about fire safety and protection.</p>
+
+                            <p class="mb-6">Wildfires have become a regular, year-round event in California, and all parties need to improve their response to them. Collaboration between insurers, policymakers, and other stakeholders is vital. Efforts to improve building codes, enhance fire prevention measures, and invest in large-scale mitigation projects are essential. Public-private partnerships can help share the financial burden and ensure adequate resources for disaster response and recovery.</p>
+
+                            <p class="mb-6">It's a great time to be AIS and Mercury!</p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <img style="width: 100%;" src="images/footer.png" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+                // Placeholder for future interactivity if we decide to implement page switching or mobile menu toggles.
+    </script>
+</body>
+</html>
