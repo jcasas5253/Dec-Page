@@ -33,6 +33,10 @@
             font-family: 'Inter', sans-serif;
         }
 
+        p {
+            font-size: 19px !important;
+        }
+
         /* Styling for the main content block to look like a single page document */
         .document-container {
             background-color: white;
@@ -88,9 +92,10 @@
     <div class="document-container min-h-screen">
 
         <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
-        <div class="w-full h-48 sm:h-64 overflow-hidden shadow-lg">
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
             <!-- This is the main full-width hero image placeholder -->
-            <img src="images/Picture9.png" class="w-full h-full object-cover" alt="Header Banner Image" onerror="this.onerror=null;this.src='https://placehold.co/1200x256/6896c4/ffffff?text=ANNIVERSARY+BANNER'" />
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff;">FEBRUARY 2025 | VOLUME 3 ISSUE 01</p>
         </div>
 
         <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
@@ -112,23 +117,20 @@
                     <a href="index.html" class="nav-link flex justify-between items-center p-3 rounded-lg hover:bg-white/10 transition duration-200">
                         CEO MESSAGE
                     </a>
-                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">LA Fires</p>
-                    </div>
 
                     <a href="sales.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
                         SALES
                     </a>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">+ CONTEST</p>
-                        <p class="py-1">+ BRAGS</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
                     <a href="service.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
                         SERVICE
                     </a>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">+ BRAGS</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
                     <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
@@ -155,142 +157,144 @@
 
                     <!-- Article Body: Introduction and Main Image -->
                     <article class="space-y-6">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Happy Work Anniversary</h1>
+                        <div class="wrapper-section" style="border: solid black 1px;">
+                            <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem; display: inline;">Happy Work Anniversary</h1>
+                            <img src="images/Picture18.png" style="display: inline; height: 50px; position: relative; top: -20px;" />
 
-                        <!-- Introductory Text (Expanded Content) -->
-                        <div class="text-base leading-relaxed">
-                            <p class="mb-6">
-                                Be sure to wish them a happy work anniversary on Kudos!
-                            </p>
-                        </div>
-
-                        <!-- ------------------------------------------------------------- -->
-                        <!-- UPDATED: Anniversary Photo Montage (Left, Middle Stacked, Right) -->
-                        <!-- The main container is a 3-column grid. The middle column uses a flex-col to stack two images. -->
-                        <!-- ------------------------------------------------------------- -->
-                        <div class="w-full mb-8 overflow-hidden shadow-xl grid grid-cols-3 gap-2 rounded-xl">
-
-                            <!-- Column 1: Single Image (Full Height) -->
-                            <img src="images/Picture7a.png"
-                                 class="w-full h-full object-cover rounded-tl-xl rounded-bl-xl"
-                                 style="height: 400px;"
-                                 alt="Anniversary Photo 1"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/400x600/6896c4/002c45?text=PHOTO+1+LEFT'" />
-
-                            <!-- Column 2: Two Stacked Images (using flex-col to fill the height) -->
-                            <div class="flex flex-col gap-2 h-full">
-                                <!-- Image 2: Top Half -->
-                                <img src="images/Picture7b.png"
-                                     class="w-full h-1/2 object-cover"
-                                     style="height: 200px;"
-                                     alt="Anniversary Photo 2"
-                                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/024079/ffffff?text=PHOTO+2+TOP'" />
-                                <!-- Image 3: Bottom Half -->
-                                <img src="images/Picture7c.png"
-                                     class="w-full h-1/2 object-cover"
-                                     style="height: 192px;"
-                                     alt="Anniversary Photo 3"
-                                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/f2b408/002c45?text=PHOTO+3+BOTTOM'" />
+                            <!-- Introductory Text (Expanded Content) -->
+                            <div class="text-base leading-relaxed" style="margin-top: 0;">
+                                <p class="mb-6">
+                                    Be sure to wish them a happy work anniversary on Kudos!
+                                </p>
                             </div>
 
-                            <!-- Column 3: Single Image (Full Height) -->
-                            <img src="images/Picture7d.png"
-                                 class="w-full h-full object-cover rounded-tr-xl rounded-br-xl"
-                                 style="height: 400px;"
-                                 alt="Anniversary Photo 4"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/400x600/002c45/ffffff?text=PHOTO+4+RIGHT'" />
-                        </div>
+                            <!-- ------------------------------------------------------------- -->
+                            <!-- UPDATED: Anniversary Photo Montage (Left, Middle Stacked, Right) -->
+                            <!-- The main container is a 3-column grid. The middle column uses a flex-col to stack two images. -->
+                            <!-- ------------------------------------------------------------- -->
+                            <div class="w-full mb-8 overflow-hidden shadow-xl grid grid-cols-3 gap-2 rounded-xl">
 
-                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem; text-align: center;">Beverly Daudel</h1>
-                        <p style="text-align: center; font-weight: bold;">30 Years of Service Excellence</p>
+                                <!-- Column 1: Single Image (Full Height) -->
+                                <img src="images/Picture7a.png"
+                                     class="w-full h-full object-cover rounded-tl-xl rounded-bl-xl"
+                                     style="height: 400px;"
+                                     alt="Anniversary Photo 1"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x600/6896c4/002c45?text=PHOTO+1+LEFT'" />
 
-                        <div class="text-base leading-relaxed">
-                            <p class="mb-6">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                        </div>
-                        <div class="text-base leading-relaxed">
-                            <p class="mb-6">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                        </div>
-                        <div class="text-base leading-relaxed">
-                            <p class="mb-6">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                        </div>
+                                <!-- Column 2: Two Stacked Images (using flex-col to fill the height) -->
+                                <div class="flex flex-col gap-2 h-full">
+                                    <!-- Image 2: Top Half -->
+                                    <img src="images/Picture7b.png"
+                                         class="w-full h-1/2 object-cover"
+                                         style="height: 200px;"
+                                         alt="Anniversary Photo 2"
+                                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/024079/ffffff?text=PHOTO+2+TOP'" />
+                                    <!-- Image 3: Bottom Half -->
+                                    <img src="images/Picture7c.png"
+                                         class="w-full h-1/2 object-cover"
+                                         style="height: 192px;"
+                                         alt="Anniversary Photo 3"
+                                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/f2b408/002c45?text=PHOTO+3+BOTTOM'" />
+                                </div>
 
-                        <p style="text-align: center;">Congratulations, Beverly-here's to 30 amazing years and many more to come!</p>
+                                <!-- Column 3: Single Image (Full Height) -->
+                                <img src="images/Picture7d.png"
+                                     class="w-full h-full object-cover rounded-tr-xl rounded-br-xl"
+                                     style="height: 400px;"
+                                     alt="Anniversary Photo 4"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x600/002c45/ffffff?text=PHOTO+4+RIGHT'" />
+                            </div>
 
-                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
-                            <img src="images/Picture10.png" style="width: 50%;" />
-                        </div>
+                            <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem; text-align: center;">Beverly Daudel</h1>
+                            <p style="text-align: center; font-weight: bold;">30 Years of Service Excellence</p>
 
-                        <p style="text-align: center;">Front: Kelly McMillan, Tina Hernandez, Beverly Daudel, Candy Silverman, Mark Casas, Lani Elkin</p>
-                        <p style="text-align: center;">Back: Lisa Edwards, Jamie Lopez, Silvia Ward, Mark Ribisi, Kimberley Felipe, Demond Jordan, Byron Taylor</p>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
 
-                        <!-- ------------------------------------------------------------- -->
-                        <!-- 1. Long-Term Anniversaries (Milestones) -->
-                        <section class="mb-10 pt-4" style="padding-top: 10rem;">
-                            <h2 class="text-3xl font-black text-ais-dark mb-6 border-b-4 border-ais-accent pb-1">More Anniversaries!</h2>
+                            <p style="text-align: center;">Congratulations, Beverly-here's to 30 amazing years and many more to come!</p>
 
-                            <!-- Grid for different milestone years -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                <img src="images/Picture10.png" style="width: 50%;" />
+                            </div>
 
-                                <!-- 15+ Years (Dark Accent) -->
-                                <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
-                                    <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
-                                    <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
-                                        <img src="images/Picture12.png" style="width: 70%; border-radius: 10px;" />
+                            <p style="text-align: center; font-size: 16px !important; font-style: italic;">Front: Kelly McMillan, Tina Hernandez, Beverly Daudel, Candy Silverman, Mark Casas, Lani Elkin</p>
+                            <p style="text-align: center; font-size: 16px !important; font-style: italic;">Back: Lisa Edwards, Jamie Lopez, Silvia Ward, Mark Ribisi, Kimberley Felipe, Demond Jordan, Byron Taylor</p>
+
+                            <!-- ------------------------------------------------------------- -->
+                            <!-- 1. Long-Term Anniversaries (Milestones) -->
+                            <section class="mb-10 pt-4" style="padding-top: 10rem;">
+                                <h2 class="text-3xl font-black text-ais-dark mb-6 border-b-4 border-ais-accent pb-1">More Anniversaries!</h2>
+
+                                <!-- Grid for different milestone years -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                                    <!-- 15+ Years (Dark Accent) -->
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/Picture12.png" style="width: 70%; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center;">Linda F</li>
+                                            <li style="text-align: center;">Sales Department</li>
+                                        </ul>
                                     </div>
-                                    <ul class="space-y-2 text-sm font-semibold">
-                                        <li style="text-align: center;">Linda F</li>
-                                        <li style="text-align: center;">Sales Department</li>
-                                    </ul>
-                                </div>
 
-                                <!-- 10 Years (Light Accent) -->
-                                <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
-                                    <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
-                                    <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
-                                        <img src="images/Picture12.png" style="width: 70%; border-radius: 10px;" />
+                                    <!-- 10 Years (Light Accent) -->
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/Picture12.png" style="width: 70%; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center;">John Smith</li>
+                                            <li style="text-align: center;">Service Department</li>
+                                        </ul>
                                     </div>
-                                    <ul class="space-y-2 text-sm font-semibold">
-                                        <li style="text-align: center;">John Smith</li>
-                                        <li style="text-align: center;">Service Department</li>
-                                    </ul>
-                                </div>
 
-                                <!-- 5 Years (Light Accent) -->
-                                <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
-                                    <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">10 Years</h3>
-                                    <ul class="space-y-2 text-sm font-semibold">
-                                        <li style="text-align: center;">First Name</li>
-                                        <li style="text-align: center;">First Name</li>
-                                        <li style="text-align: center;">First Name</li>
-                                    </ul>
-                                    <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center; margin-top: 15%;">5 Years</h3>
-                                    <ul class="space-y-2 text-sm font-semibold">
-                                        <li style="text-align: center;">First Name</li>
-                                        <li style="text-align: center;">First Name</li>
-                                        <li style="text-align: center;">First Name</li>
-                                    </ul>
-                                </div>
-                        </section>
+                                    <!-- 5 Years (Light Accent) -->
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">10 Years</h3>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center;">First Name</li>
+                                            <li style="text-align: center;">First Name</li>
+                                            <li style="text-align: center;">First Name</li>
+                                        </ul>
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center; margin-top: 15%;">5 Years</h3>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center;">First Name</li>
+                                            <li style="text-align: center;">First Name</li>
+                                            <li style="text-align: center;">First Name</li>
+                                        </ul>
+                                    </div>
+                            </section>
+                        </div>
 
                         <!-- Sales Performance Section (Top 10 & Top 3) - NOW SIDE-BY-SIDE -->
                         <section class="mt-12" style="background-color: rgb(0 44 69); margin-top: 10rem;">
 
-                            <!-- Grid Container for Side-by-Side Layout (Single column on small, two columns on large) -->
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
-                                <!-- LEFT COLUMN: Top 10 Producers -->
-                                <div>
-                                    <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; margin-top: -15px">AIS Cares</h2>
+                                <div class="lg:col-span-7">
+                                    <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="padding-left: 30px !important; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; margin-top: -15px">AIS Cares</h2>
 
                                     <div class="space-y-3 text-ais-text-dark">
-                                        <!-- List Item Structure (Using custom styles for consistency) -->
-                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="color: #fff; padding: 15px; padding:30px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">AIS Day of Giving</h2>
+                                        <img src="images/Picture19.png" style="display: inline; height: 70px; margin-left: 30px;" />
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="display: inline; color: #fff; padding: 15px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">AIS Day of Giving</h2>
+
                                         <p class="mb-6" style="color: #fff; padding: 30px; padding-bottom: 0;">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                         </p>
@@ -300,9 +304,108 @@
                                     </div>
                                 </div>
 
-                                <div class="w-full rounded-xl mb-6 overflow-hidden bg-red-800 shadow-xl flex items-center justify-center" style="height: 100%; background-color: rgb(0 44 69); border-top-right-radius: 0; border-bottom-right-radius: 0;">
-                                    <img src="images/Picture13.png" style="height: 100%; width: 100%;" />
+                                <div class="flex flex-col space-y-4 lg:col-span-5">
+                                    <div class="w-full overflow-hidden" style="flex: 1;">
+                                        <img src="images/Picture13.png" style="width: 100%; height: auto; display: block; object-fit: cover;" />
+                                    </div>
+
+                                    <div class="w-full overflow-hidden" style="flex: 1;">
+                                        <img src="images/Picture13.png" style="width: 100%; height: auto; display: block; object-fit: cover;" />
+                                    </div>
                                 </div>
+
+                            </div>
+                        </section>
+
+                        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg" style="height: 100% !important; margin-top: 5rem;">
+                            <!-- This is the main full-width hero image placeholder -->
+                            <img src="images/Picture20.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0; height: 100%; object-fit: fill;">
+                        </div>
+
+                        <div class="mt-12 mx-auto max-w-7xl">
+                            <div class="bg-white p-6 md:p-10 rounded-lg">
+
+                                <div class="mb-8" style="border: solid black 1px; border-bottom: none; margin-bottom: 0; margin-top: 5rem;">
+                                    <h3 class="text-lg font-semibold text-gray-700" style="background-color: rgb(0 44 69 / var(--tw-bg-opacity, 1)); color: #fff; padding:5px; padding-left: 15px;">Raffle Winners:</h3>
+                                    <div class="flex items-center mt-1" style="margin-top: 15px;">
+                                        <img src="images/Picture21.png" style="height: 35px; margin-right: 5px; margin-left: 20px;" />
+                                        <h2 class="text-2xl font-extrabold" style="color: black;">LA Kings Raffle Winners:</h2>
+                                    </div>
+                                    <p class="mt-2" style="color: black; font-weight: normal; padding-bottom: 30px; margin-left: 20px;">Congratulations to last month's raffle winners!</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="border: solid black 1px; border-top: none; padding-left: 10px; padding-right: 10px; padding-bottom: 30px;">
+
+                                    <div class="text-center">
+                                        <img src="images/Picture12.png" alt="LA Kings Raffle Winner 1"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800">Proin congue erat a dolor</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/Picture12.png" alt="LA Kings Raffle Winner 2"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800">Proin congue erat a dolor</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/Picture12.png" alt="LA Kings Raffle Winner 3"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800">Proin congue erat a dolor</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sales-brags-gradient text-white pt-12 pb-20">
+                            <section>
+                                <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; height: 230px;">Read Our Lastest Blogs:</h2>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="margin-top: -170px; padding-left: 100px; padding-right: 100px;">
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <img src="images/Picture22.jpg"
+                                             alt="Blog image 1"
+                                             style="width: 100%; height: 250px; object-fit: fill; display: block;" />
+                                        <p style="color: black; padding-top: 10px;">What Exactly is Full Coverage Car Insurance? | Insurance Basics</p>
+                                    </div>
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <img src="images/Picture23.jpg"
+                                             alt="Blog image 2"
+                                             style="width: 100%; height: 250px; object-fit: fill; display: block;" />
+                                        <p style="color: black; padding-top: 10px;">How to Review Your Business Insurance Policy: A Step-by-Step Guide</p>
+                                    </div>
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <img src="images/Picture24.jpg"
+                                             alt="Blog image 3"
+                                             style="width: 100%; height: 250px; object-fit: fill; display: block;" />
+                                        <p style="color: black; padding-top: 10px;">Planning Ahead: What Are Your Home Improvement Goals for 2025?</p>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+
+                        <section class="mt-12" style="background-image: url('images/Picture25.png'); margin-top: 0;">
+
+                            <div style="text-align: center; padding: 30px;">
+
+                                <div class="lg:col-span-7">
+                                    <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="padding-left: 30px !important; color: #fff; padding: 15px;">Our Core Values:</h2>
+
+                                    <div class="space-y-3 text-ais-text-dark">
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="display: inline; color: rgb(242 180 8 / var(--tw-border-opacity, 1)); padding: 15px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">WE OWN IT</h2>
+
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-bottom: 0;">
+                                            We act with initiative and passion, balancing decisiveness and attention to detail to drive results.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
                         </section>
 
                     </article>

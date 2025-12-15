@@ -33,6 +33,10 @@
             font-family: 'Inter', sans-serif;
         }
 
+        p {
+            font-size: 19px !important;
+        }
+
         /* Styling for the main content block to look like a single page document */
         .document-container {
             background-color: white;
@@ -61,7 +65,7 @@
         }
 
         .leaderboard-rank {
-            font-size: 1.25rem; /* text-xl */
+            font-size: 19px; /* text-xl */
             font-weight: 900; /* font-black */
             color: black;
             width: 1.5rem;
@@ -78,11 +82,11 @@
 
         .leaderboard-name {
             flex-grow: 1;
-            font-size: 1.125rem; /* text-lg */
+            font-size: 19px; /* text-lg */
             font-weight: 600; /* font-semibold */
             border-bottom: 1px solid theme('colors.gray.200');
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 11px;
             padding-left: 15px;
             background-color: #fff;
             color: black;
@@ -91,7 +95,7 @@
         .leaderboard-value {
             color: black;
             font-weight: 800; /* font-extrabold */
-            font-size: 1.25rem; /* text-xl */
+            font-size: 19px; /* text-xl */
             flex-shrink: 0;
             background-color: #FFA500;
             min-width: 50px;
@@ -143,6 +147,7 @@
         <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
             <!-- This is the main full-width hero image placeholder -->
             <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff;">FEBRUARY 2025 | VOLUME 3 ISSUE 01</p>
         </div>
 
         <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
@@ -163,24 +168,19 @@
                     <a href="index.html" class="nav-link flex justify-between items-center p-3 rounded-lg hover:bg-white/10 transition duration-200">
                         CEO MESSAGE
                     </a>
-                    <!-- Sub-links for active section -->
-                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">LA Fires</p>
-                    </div>
-
                     <a href="sales.html" class="nav-link active block p-3 rounded-lg transition duration-200">
                         SALES
                     </a>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">+ CONTEST</p>
-                        <p class="py-1">+ BRAGS</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
                     <a href="service.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
                         SERVICE
                     </a>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
-                        <p class="py-1">+ BRAGS</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
                     <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
@@ -203,7 +203,7 @@
                             <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Let's Talk Sales:</h2>
 
                             <!-- Profile: Image (Left) + Name/Title (Right) -->
-                            <div class="flex items-center space-x-4" style="margin-right: 5%;">
+                            <div class="flex items-center space-x-4" style="margin-right: 5%; position: absolute; right: 0; top: 265px;">
                                 <!-- Image -->
                                 <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
                                     <!-- Placeholder for Mark Ribisi's Image -->
@@ -262,9 +262,8 @@
                     <div class="sales-tip-bg text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12" style="margin-left: 0; margin-right: 0;">
                         <div class="flex items-center space-x-4">
                             <!-- Placeholder for an icon/image associated with the tip -->
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-ais-accent flex items-center justify-center">
-                                <svg class="w-6 h-6 text-ais-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v14L9 19z"></path></svg>
-                            </div>
+                                <img src="images/Picture15.png" style="height: 90px; width: 90px;" />
+
                             <div>
                                 <h1 class="text-xl sm:text-2xl font-black mb-1 leading-tight">Sales Tip of The Month: Make Every Homeowners Call Count</h1>
                                 <p class="text-sm opacity-90">When you get a customer on the line looking for homeowner coverage and we don't have a standard market available- don't stop there. Take an extra minute to educate the customer.</p>
@@ -358,6 +357,10 @@
                                         <span class="leaderboard-rank">3</span>
                                         <span class="leaderboard-name">David Chen</span>
                                         <span class="leaderboard-value">112</span>
+                                    </div>
+                                    <img src="images/Picture16.png" style="height: 200px; width: 200px; margin: auto; position: relative; top: 100px;"/>
+                                    <div style="text-align: center; position: relative; top: 90px;">
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="color: #fff; font-size: 2.5rem;">MARCH</h2>
                                     </div>
                                 </div>
                             </div>
