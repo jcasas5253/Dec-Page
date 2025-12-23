@@ -250,12 +250,31 @@
                                 million once we add another producer to the team. Congratulations!
                             </p>
 
-                            <div class="text-center mt-12 pb-1 break-inside-avoid">
-                                <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">10,916</h1>
-                                <p class="text-lg font-semibold text-ais-text-dark">Combined sales in March</p>
-                            </div>
-                        </div>
-                    </article>
+                            <div class="relative max-w-md mx-auto mt-12 overflow-hidden group">
+                                <button onclick="changeSlide(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer hover:text-blue-500 transition-colors" aria-label="Previous">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                                </button>
+
+                                <button onclick="changeSlide(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer hover:text-blue-500 transition-colors" aria-label="Next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                </button>
+
+                                <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">10,916</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Combined sales in March</p>
+                                    </div>
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">108%</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Improvement vs Jan 2024</p>
+                                    </div>
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">$1M+</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Commercial Premium</p>
+                                    </div>
+                                </div>
+                                </div>
+</article>
 
                     <!-- Sales Tip Block - MODIFIED FOR FULL BLEED -->
                     <!-- Used -mx- to push to the side edges, matching the article image block pattern -->
@@ -279,7 +298,7 @@
 
                             <!-- LEFT COLUMN: Top 10 Producers -->
                             <div>
-                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; ">TOP 10 - PERSONAL LINES</h2>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; border-radius: 10px;">TOP 10 - PERSONAL LINES</h2>
 
                                 <div class="space-y-3 text-ais-text-dark">
                                     <!-- List Item Structure (Using custom styles for consistency) -->
@@ -338,7 +357,7 @@
 
                             <!-- RIGHT COLUMN: Top 3 Team Leaders -->
                             <div>
-                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; ">TOP 3 - COMMERCIAL LINES</h2>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; border-radius: 10px;">TOP 3 - COMMERCIAL LINES</h2>
 
                                 <!-- Using the same list item structure as Top 10 for consistency -->
                                 <div class="space-y-3 text-ais-text-dark">
@@ -358,8 +377,8 @@
                                         <span class="leaderboard-name">David Chen</span>
                                         <span class="leaderboard-value">112</span>
                                     </div>
-                                    <img src="images/Picture16.png" style="height: 200px; width: 200px; margin: auto; position: relative; top: 100px;"/>
-                                    <div style="text-align: center; position: relative; top: 90px;">
+                                    <img src="images/Picture16.png" style="height: 300px; width: 300px; margin: auto; position: relative; top: 65px;"/>
+                                    <div style="text-align: center; position: relative; top: 65px;">
                                         <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="color: #fff; font-size: 2.5rem;">MARCH</h2>
                                     </div>
                                 </div>
@@ -479,7 +498,15 @@
     </div>
 
     <script>
-                // Placeholder for future interactivity if we decide to implement page switching or mobile menu toggles.
+        let currentSlide = 0;
+        function changeSlide(direction) {
+            const track = document.getElementById('carouselTrack');
+            const totalSlides = track.children.length;
+
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = currentSlide * 100;
+            track.style.transform = `translateX(-${offset}%)`;
+        }
     </script>
 </body>
 </html>
