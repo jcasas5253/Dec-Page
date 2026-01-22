@@ -33,6 +33,13 @@
             font-family: 'Inter', sans-serif;
         }
 
+        .sales,
+        .service,
+        .carrier,
+        .anniversaries {
+            display: none;
+        }
+
         p {
             font-size: 19px !important;
         }
@@ -82,12 +89,74 @@
         .nav-link {
             font-size: 20px;
         }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: baseline;
+            padding: 0.25rem 0;
+        }
+
+        .leaderboard-rank {
+            font-size: 19px; /* text-xl */
+            font-weight: 900; /* font-black */
+            color: black;
+            width: 1.5rem;
+            text-align: left;
+            flex-shrink: 0;
+            background-color: #FFA500;
+            min-width: 40px;
+            height: 45px;
+            text-align: center;
+            padding-top: 6px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .leaderboard-name {
+            flex-grow: 1;
+            font-size: 19px; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            border-bottom: 1px solid theme('colors.gray.200');
+            padding-top: 7px;
+            padding-bottom: 11px;
+            padding-left: 15px;
+            background-color: #fff;
+            color: black;
+            height: 45px;
+        }
+
+        .leaderboard-value {
+            color: black;
+            font-weight: 800; /* font-extrabold */
+            font-size: 19px; /* text-xl */
+            flex-shrink: 0;
+            background-color: #FFA500;
+            min-width: 50px;
+            height: 45px;
+            text-align: center;
+            padding-top: 6px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .sales-tip-bg {
+            background-color: rgb(65, 107, 159);
+        }
+
+        .anniversary-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border-bottom: 1px solid theme('colors.gray.200'); -- Removed */
+            padding-bottom: 0.25rem;
+            padding-top: 0.25rem;
+        }
     </style>
 </head>
 <body class="min-h-screen">
 
     <!-- Document Container now wraps everything, but doesn't set the flex direction -->
-    <div class="document-container min-h-screen">
+    <div class="document-container min-h-screen ceo-message">
 
         <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
         <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
@@ -111,35 +180,35 @@
 
                 <!-- Navigation Menu -->
                 <nav class="space-y-1 text-sm font-semibold">
-                    <a href="index.html" class="nav-link active flex justify-between items-center p-3 rounded-lg transition duration-200">
+                    <span class="nav-link active flex justify-between items-center p-3 rounded-lg transition duration-200 ceo-btn" style="cursor: pointer;">
                         CEO MESSAGE
-                    </a>
+                    </span>
                     <!-- Sub-links for active section -->
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
                     </div>
 
-                    <a href="sales.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                    <span class="nav-link hover:bg-white/10 block p-3 rounded-lg duration-200 sales-btn" style="cursor: pointer;">
                         SALES
-                    </a>
+                    </span>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
                         <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
                         <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
-                    <a href="service.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 service-btn" style="cursor: pointer;">
                         SERVICE
-                    </a>
+                    </span>
                     <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
                         <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
                     </div>
 
-                    <a href="carrier.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 carrier-btn" style="cursor: pointer;">
                         CARRIER NEWS
-                    </a>
+                    </span>
 
-                    <a href="anniversaries.html" class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200">
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 anniversaries-btn" style="cursor: pointer;">
                         ANNIVERSARIES
-                    </a>
+                    </span>
                     <img src="images/MLK.png" style="margin-top: 15px;" />
                 </nav>
             </aside>
@@ -205,8 +274,8 @@
 
                             <!-- Article Image Block -->
                             <!--<div class="w-full h-48 sm:h-64 rounded-xl mb-6 overflow-hidden flex items-center justify-center" style="height: 100%;">
-        <img src="images/Picture2.png" style="height: 250px; width: 100%; object-fit: cover;" />
-    </div>-->
+                                <img src="images/Picture2.png" style="height: 250px; width: 100%; object-fit: cover;" />
+                            </div>-->
 
                             <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 1.5rem;">The Meaning Behind Milestones</h1>
                             <p class="mb-6">
@@ -257,8 +326,1459 @@
         </div>
     </div>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="document-container min-h-screen sales">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff; font-size: 22px !important;">JANUARY 2026 | ISSUE 311</p>
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 25px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <span class="nav-link hover:bg-white/10 flex justify-between items-center p-3 rounded-lg transition duration-200 ceo-btn" style="cursor: pointer;">
+                        CEO MESSAGE
+                    </span>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                    </div>
+
+                    <span class="nav-link active block p-3 rounded-lg duration-200 sales-btn" style="cursor: pointer;">
+                        SALES
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 service-btn" style="cursor: pointer;">
+                        SERVICE
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 carrier-btn" style="cursor: pointer;">
+                        CARRIER NEWS
+                    </span>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 anniversaries-btn" style="cursor: pointer;">
+                        ANNIVERSARIES
+                    </span>
+                    <img src="images/MLK.png" style="margin-top: 15px;" />
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Let's Talk Sales:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 130px; position: absolute; right: 0; top: 265px;">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <img src="images/Picture3.png" alt="Mark Casas Profile" onerror="this.onerror=null; this.src='https://placehold.co/80x80/ffffff/000000?text=MR'" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">Mark Casas</p>
+                                    <p class="text-sm opacity-90 leading-tight">Senior Vice President</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Starting 2025</h1>
+
+                        <!-- Main Text Section - Columnar on Desktop -->
+                        <div class="article-content text-base leading-relaxed">
+                            <p class="mb-6">
+                                I wanted to take a moment to share some exciting news about our performance in December 2025. We closed the year with strong results across most key metrics compared to both prior months and December 2024.
+                            </p>
+
+                            <p class="mb-6">
+                                Our total sales reached an impressive 12,158, up from 10,673 in December 2024, making it the second-highest monthly total in 2025. This result represents 114% of the prior year and 132% of our plan. Auto sales were particularly strong, with 8,626 in December, an increase from 7,949 last year and 131% of plan. Our homeowner sales also saw a significant jump to 3,056, up from 2,252 in December 2024, achieving 136% of the prior year and 117% of plan.
+                            </p>
+
+                            <p class="mb-6">
+                                Quoting activity also finished strong. Auto quotes for December were 19,366, up from 16,850 in 2024 and 109% of plan. Homeowners quotes reached 10,331, a substantial increase over 6,303 last year and 121% of plan. Our closing ratios remained robust, with the auto closing ratio at 44.54%, slightly below December 2024 but well above plan. The homeowners closing ratio improved to 29.58%, up from the 24.47% average for the year, and significantly higher than plan.
+                            </p>
+
+                            <p class="mb-6">
+                                These results cap a year of growth, with notable gains in both sales and quoting activity, and strong closing performance across all lines. Thank you all for an outstanding year of hard work and dedication. Your efforts have been instrumental in leading the way toward our goal of hitting $1 billion in written premium by 2026.
+                            </p>
+
+                            <p class="mb-6">
+                                Let's continue this momentum into the new year and achieve even greater success together!
+                            </p>
+
+                            <div class="relative max-w-md mx-auto mt-12 overflow-hidden group">
+                                <button onclick="changeSlide(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer hover:text-blue-500 transition-colors" aria-label="Previous">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                                </button>
+
+                                <button onclick="changeSlide(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer hover:text-blue-500 transition-colors" aria-label="Next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                </button>
+
+                                <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">12,158</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Combined sales in December</p>
+                                    </div>
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">14%</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Improvement MOM</p>
+                                    </div>
+                                    <div class="min-w-full text-center pb-1">
+                                        <h1 class="text-6xl font-extrabold text-ais-blue leading-none mb-2">$1M+</h1>
+                                        <p class="text-lg font-semibold text-ais-text-dark">Commercial Premium</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+
+                    <!-- Sales Tip Block - MODIFIED FOR FULL BLEED -->
+                    <!-- Used -mx- to push to the side edges, matching the article image block pattern -->
+                    <!--<div class="sales-tip-bg text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12" style="margin-left: 0; margin-right: 0;">
+                        <div class="flex items-center space-x-4">-->
+                    <!-- Placeholder for an icon/image associated with the tip -->
+                    <!--<img src="images/Picture15.png" style="height: 90px; width: 90px;" />
+
+                            <div>
+                                <h1 class="text-xl sm:text-2xl font-black mb-1 leading-tight">Sales Tip of The Month: Make Every Homeowners Call Count</h1>
+                                <p class="text-sm opacity-90">When you get a customer on the line looking for homeowner coverage and we don't have a standard market available- don't stop there. Take an extra minute to educate the customer.</p>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- Sales Performance Section (Top 10 & Top 3) - NOW SIDE-BY-SIDE -->
+                    <section class="mt-12" style="background-color: rgb(0 44 69); padding: 30px;">
+
+                        <!-- Grid Container for Side-by-Side Layout (Single column on small, two columns on large) -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+
+                            <!-- LEFT COLUMN: Top 10 Producers -->
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; border-radius: 10px;">TOP 10 - PERSONAL LINES</h2>
+
+                                <div class="space-y-3 text-ais-text-dark">
+                                    <!-- List Item Structure (Using custom styles for consistency) -->
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">1</span>
+                                        <span class="leaderboard-name">Arian Arcelon</span>
+                                        <span class="leaderboard-value">223</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">2</span>
+                                        <span class="leaderboard-name">Erendira Perez</span>
+                                        <span class="leaderboard-value">186</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">3</span>
+                                        <span class="leaderboard-name">John Trankle</span>
+                                        <span class="leaderboard-value">181</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">4</span>
+                                        <span class="leaderboard-name">David Siacotos</span>
+                                        <span class="leaderboard-value">175</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">5</span>
+                                        <span class="leaderboard-name">Kristin Clark</span>
+                                        <span class="leaderboard-value">152</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">6</span>
+                                        <span class="leaderboard-name">Rebekah Felipe</span>
+                                        <span class="leaderboard-value">152</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">7</span>
+                                        <span class="leaderboard-name">Adan Armas</span>
+                                        <span class="leaderboard-value">148</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">8</span>
+                                        <span class="leaderboard-name">Max Fahn</span>
+                                        <span class="leaderboard-value">142</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">9</span>
+                                        <span class="leaderboard-name">Tracy Pezzente</span>
+                                        <span class="leaderboard-value">141</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">10</span>
+                                        <span class="leaderboard-name">Michelle Hucko</span>
+                                        <span class="leaderboard-value">134</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN: Top 3 Team Leaders -->
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="text-align: center; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; border-radius: 10px;">TOP 3 - COMMERCIAL LINES</h2>
+
+                                <!-- Using the same list item structure as Top 10 for consistency -->
+                                <div class="space-y-3 text-ais-text-dark">
+                                    <!-- 1st Place - Added subtle visual emphasis -->
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">1</span>
+                                        <span class="leaderboard-name">Natalia Leandry</span>
+                                        <span class="leaderboard-value" style="padding-left: 10px; padding-right: 10px;">$216,416</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">2</span>
+                                        <span class="leaderboard-name">Amanda Pena</span>
+                                        <span class="leaderboard-value" style="padding-left: 10px; padding-right: 10px;">$187,553</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <span class="leaderboard-rank">3</span>
+                                        <span class="leaderboard-name">Cynthia Hernandez</span>
+                                        <span class="leaderboard-value" style="padding-left: 10px; padding-right: 10px;">$177,213</span>
+                                    </div>
+                                    <img src="images/Picture16.png" style="height: 300px; width: 300px; margin: auto; position: relative; top: 65px;" />
+                                    <div style="text-align: center; position: relative; top: 65px;">
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="color: #fff; font-size: 2.5rem;">December</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- START SECTION: Sales Brags with Gradient Background -->
+                    <div class="sales-brags-gradient text-white pt-12 pb-20">
+                        <!-- Inner container to restore padding from the main content -->
+                        <section>
+                            <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; height: 230px;">Sales Brags:</h2>
+
+                            <!-- Brag Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="margin-top: -170px; padding-left: 100px; padding-right: 100px;">
+
+                                <!-- Brag Card 1 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"My agent AJ was very professional and extremely friendly. After less than 10 minutes of speaking with him, I knew that I would switch to AIS! Thank you!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">AJ Colby</p>
+                                            <p class="text-gray-500">Inside Sales Rep I</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 2 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Deidra was so helpful! She found the best option for me. I appreciated her very much."</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Deidra Jones</p>
+                                            <p class="text-gray-500">Inside Sales Rep Sr.</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 3 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Shane Case was awesome! His customer service is excellent, and he’s extremely knowledgeable about insurance. He takes the time to find a policy that fits your needs and your budget. Thank you, Shane, for all your help!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Shane Case</p>
+                                            <p class="text-gray-500">Inside Sales Rep Sr.</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 4 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Natalia did a wonderful job. She explained everything clearly and addressed all of our questions. She was very professional, and she even found us the best quote for our business. We truly appreciate her help!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Natalia Leandry</p>
+                                            <p class="text-gray-500">Commercial Sales Rep</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 5 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Perfect service! David was helpful, knowledgeable, and kind. He took great care of me and answered all my questions."</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">David Siacotos</p>
+                                            <p class="text-gray-500">Inside Sales Rep Sr.</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 6 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Tracy delivered excellent customer service! Thank you for your patience and help!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Tracy Pezzente</p>
+                                            <p class="text-gray-500">Inside Sales Rep Sr.</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- END SECTION: Sales Brags with Gradient Background -->
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center pt-8">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <!-- Removed fixed width and made it span the available content width -->
+                        <img class="w-full" src="images/footer.png" alt="Footer Graphic" onerror="this.onerror=null; this.src='https://placehold.co/1000x50/f0f2f5/393939?text=AIS+DEC+PAGE+FOOTER'" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="document-container min-h-screen service">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff; font-size: 22px !important;">JANUARY 2026 | ISSUE 311</p>
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 25px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <span class="nav-link hover:bg-white/10 flex justify-between items-center p-3 rounded-lg transition duration-200 ceo-btn" style="cursor: pointer;">
+                        CEO MESSAGE
+                    </span>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 duration-200 sales-btn" style="cursor: pointer;">
+                        SALES
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link active block p-3 rounded-lg transition duration-200 service-btn" style="cursor: pointer;">
+                        SERVICE
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 carrier-btn" style="cursor: pointer;">
+                        CARRIER NEWS
+                    </span>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 anniversaries-btn" style="cursor: pointer;">
+                        ANNIVERSARIES
+                    </span>
+                    <img src="images/MLK.png" style="margin-top: 15px;" />
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Service & Operations:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 5%; position: absolute; right: 0; top: 265px;">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <!-- Placeholder for Mark Ribisi's Image -->
+                                    <img src="images/Picture5.png" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">Lani Elkin</p>
+                                    <p class="text-sm opacity-90 leading-tight">SVP Admin & Service Ops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Building a Culture of Excellence with PrAISe</h1>
+
+                        <!-- Main Text Section - Columnar on Desktop -->
+                        <div class="article-content text-base leading-relaxed">
+                            <p class="mb-6">
+                                In 2025, we introduced PrAISe, an inspiring  recognition program that celebrates team members who go above and beyond in the way they care for our customers. Every interaction is a chance to build trust, solve problems, and create a positive experience - and PrAISe highlights the people who consistently deliver on that level of excellence.
+                            </p>
+
+                            <p class="mb-3">
+                                Throughout the year, service team members demonstrated:
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                <span style="font-weight: bold;">• Exceptional customer handling</span> – listening with empathy, taking ownership, and following through
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                <span style="font-weight: bold;">• Professionalism and teamwork</span> – supporting colleagues and representing AIS and Mercury with integrity
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                <span style="font-weight: bold;">• Commitment to quality</span> – getting it right the first time, and finding ways to improve the customer experience
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                <span style="font-weight: bold;">• Owning performance behaviors</span> – taking accountability for key performance metrics (call volume, talk time, productivity, and more) and making thoughtful decisions to support them
+                            </p>
+                            <p class="mb-6">
+                                As we look ahead, we appreciate the following insights you gave in a recent survey, as it helps shape our path forward.
+                            </p>
+
+                            <p class="mb-3" style="font-weight: bold;">
+                                What You Enjoy Most
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                ❤️Feeling acknowledged and appreciated
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                ❤️Seeing progress across teams and being motivated to improve
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                ❤️A challenge structure that recognizes different kinds of achievement
+                            </p>
+
+                            <p class="mb-3" style="font-weight: bold;">
+                                What You Want to See Next
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                💡More opportunities for people to achieve and possibly a higher payout
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                💡More winners each month
+                            </p>
+                            <p class="mb-3" style="padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                💡Regularly share success stories and highlight winners
+                            </p>
+
+                            <p class="mb-6">
+                                We value all our team members for setting high standards in service excellence and showing our customers what AIS is all about.
+                            </p>
+                            <p class="mb-6">
+                                As we begin 2026, we’re inspired and fired up to bring even more PrAISe to YOU.  Looking forward to all we’ll achieve together this year.
+                            </p>
+                            <p class="mb-3" style="font-weight: bold;">
+                                Congratulations to our 2025 Quarterly PrAISe Raffle Winners!
+                            </p>
+                            <p class="mb-3" style="padding-left: 15px;">
+                                Q2 - Richard Delgado, Esthela Gonzalez, Edwin Neal
+                            </p>
+                            <p class="mb-3" style="padding-left: 15px;">
+                                Q3 - Yolanda Guillory-Benson, Kaylee Leone, Michelle Sanchez
+                            </p>
+                            <p class="mb-3" style="padding-left: 15px;">
+                                Q4 - Crystal Villegas, Rebecca Bohrer, Fabian Garcia
+                            </p>
+                            <p class="mb-6">
+                                For all PrAISe qualifiers, see below:
+                            </p>
+
+                            <!-- Article Image Block -->
+                            <div class="w-full rounded-xl mb-6 overflow-hidden bg-red-800 flex items-center justify-center" style="background-color: #fff;">
+                                <img src="images/service.png" style="height: 100%; width: 100%;" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- START SECTION: Sales Brags with Gradient Background -->
+                    <div class="sales-brags-gradient text-white pt-12 pb-20">
+                        <!-- Inner container to restore padding from the main content -->
+                        <section>
+                            <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; height: 230px;">Service Brags:</h2>
+
+                            <!-- Brag Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="margin-top: -170px; padding-left: 100px; padding-right: 100px;">
+
+                                <!-- Brag Card 1 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Quick response, great communication, and I received an email confirmation as soon as our conversation was completed. I truly feel like I’m in good hands. Thank you, Bobbi!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Bobbi Apt</p>
+                                            <p class="text-gray-500">Customer Relations Specialist III</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 2 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Juan was very attentive to my needs and patient with all of my questions and concerns. He took the time to look for discounts to help lower my premium. I really appreciate his help!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Juan Siu</p>
+                                            <p class="text-gray-500">Customer Relations Specialist III</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 3 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Betty was amazing! She was knowledgeable and quickly took care of my request to remove a vehicle from our policy. She helped me understand the process clearly and supported me every step of the way."</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Betty Dart</p>
+                                            <p class="text-gray-500">Customer Relations Specialist III</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 4 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Annabel was very kind and ready to assist right away! You all are always wonderful to deal with. Thank you!</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Anabel Molina</p>
+                                            <p class="text-gray-500">Customer Relations Specialist III</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 5 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Paul treated me like a valued customer, not just another caller. He was able to answer every question I had about auto insurance. Thank you for your patience, Paul!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Paul Vargas</p>
+                                            <p class="text-gray-500">Customer Relations Specialist III</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+
+                                <!-- Brag Card 6 -->
+                                <div class="bg-white text-ais-text-dark p-6 rounded-lg shadow-xl flex flex-col justify-between" style="border: 1px solid gray;">
+                                    <div>
+                                        <p class="italic mb-4">"Ireri was very helpful and courteous. Keep doing what you are doing! Outstanding job!"</p>
+                                    </div>
+                                    <div class="flex items-end space-x-3 pt-3">
+                                        <div class="flex-grow">
+                                            <p class="font-bold text-ais-blue">Ireri Vaca</p>
+                                            <p class="text-gray-500">Customer Relations Specialist II</p>
+                                        </div>
+                                        <img src="images/Picture4.png" class="w-10 h-10 rounded-full object-cover border-2 border-gray-100" style="height: 70px; width: 70px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- END SECTION: Sales Brags with Gradient Background -->
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <img style="width: 100%;" src="images/footer.png" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="document-container min-h-screen carrier">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff; font-size: 22px !important;">JANUARY 2026 | ISSUE 311</p>
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 25px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <span class="nav-link hover:bg-white/10 flex justify-between items-center p-3 rounded-lg transition duration-200 ceo-btn" style="cursor: pointer;">
+                        CEO MESSAGE
+                    </span>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 duration-200 sales-btn" style="cursor: pointer;">
+                        SALES
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 service-btn" style="cursor: pointer;">
+                        SERVICE
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link active block p-3 rounded-lg transition duration-200 carrier-btn" style="cursor: pointer;">
+                        CARRIER NEWS
+                    </span>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 anniversaries-btn" style="cursor: pointer;">
+                        ANNIVERSARIES
+                    </span>
+                    <img src="images/MLK.png" style="margin-top: 15px;" />
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+                    <!-- President's Title and Image Block (Dark background spans the full width of the main content column) -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Carrier Corner:</h2>
+
+                            <!-- Profile: Image (Left) + Name/Title (Right) -->
+                            <div class="flex items-center space-x-4" style="margin-right: 5%; position: absolute; right: 0; top: 265px; ">
+                                <!-- Image -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <!-- Placeholder for Mark Ribisi's Image -->
+                                    <img src="images/Picture4.png" />
+                                </div>
+
+                                <!-- Name and Title -->
+                                <div>
+                                    <p class="text-lg sm:text-xl font-black leading-tight">George Kalamaraas</p>
+                                    <p class="text-sm opacity-90 leading-tight">VP Business Development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <article class="space-y-6" style="border: 1px solid gray; padding: 15px;">
+                        <!-- Main Text Section - Grid Layout -->
+                        <div class="article-content text-base leading-relaxed" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+                            <div>
+                                <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem;">Kickstarting 2026 on the Big Stage at Lead Generation World!</h1>
+
+                                <p class="mb-6">
+                                    On January 5th, I had the privilege of taking the stage at Lead Generation World, the industry's premier conference in San Diego. I joined a distinguished panel of leaders including Brock Thompson (LendingTree), Amrish Singh (Liberate), Jeff Arnold (Rightsure), and Tyler Nicholson (Aspire General) to discuss the transformative power of AI.
+                                </p>
+                                <p class="mb-6">
+                                    Our conversation focused on how we are leveraging AI to evolve inbound and outbound campaigns into smarter, faster, and more profitable systems. It was an incredible opportunity to share our vision for the future of the industry!
+                                </p>
+                                <p class="mb-6" style="padding: 30px; padding-bottom: 10px; font-size: 16px !important; font-style: italic; ">
+                                    In the Photo (L to R): Brock Thompson, Amrish Singh, George Kalamaras, Jeff Arnold, and Tyler Nicholson. Photo taken by Eric Troutman.
+                                </p>
+                            </div>
+
+                            <div class="w-full rounded-xl overflow-hidden flex items-center justify-center">
+                                <img src="images/carriercorner.jpg" style="object-fit: cover; max-width: 85%; border-radius: 10px;" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sales Performance Section (Top 10 & Top 3) - NOW SIDE-BY-SIDE -->
+                    <section class="mt-12" style="background-color: rgb(0 44 69); margin-top: 3rem;">
+                        <!-- Grid Container for Side-by-Side Layout (Single column on small, two columns on large) -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+                            <!-- LEFT COLUMN: Top 10 Producers -->
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="padding-left: 30px !important; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; margin-top: -15px;">Industry News:</h2>
+                                <div class="space-y-3 text-ais-text-dark">
+                                    <!-- Flexbox Container for Image and H2 -->
+                                    <div style="display: flex; align-items: center; gap: 15px; padding-left: 30px; padding-right: 30px; padding-top: 15px;">
+                                        <img src="images/Picture17.png" style="height: 60px; flex-shrink: 0;" />
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="color: #fff; margin: 0; flex: 1;">Reaching $1 Million in Commercial Premium with Geico!</h2>
+                                    </div>
+                                    <p class="mb-6" style="color: #fff; padding: 30px;">
+                                        In other exciting news, Geico recently honored our agency with a commemorative plaque for hitting $1 million dollars in Commercial premium!
+                                        Beyond this milestone, we've surpassed $2 million in overall business premium with Geico, continuing our streak as one of Geico's
+                                        top-performing, fastest-growing agents in the entire country. We are incredibly proud of this momentum and grateful for the hard work
+                                        that made it possible.
+                                    </p>
+                                    <p class="mb-6" style="color: #fff; padding: 30px; padding-bottom: 10px; font-size: 16px !important; font-style: italic; ">
+                                        In the Photo (L to R): Mark Casas, Karen Dang, Mike Hileman, Stuart Rawlins, George Kalamaras, Candy Silverman, James Gilbert.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-full rounded-xl mb-6 overflow-hidden bg-red-800 shadow-xl flex items-center justify-center" style="height: 100%; background-color: rgb(0 44 69); border-radius: 0;">
+                                <img src="images/Geico.png" style="border-radius: 10px;" />
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <img style="width: 100%;" src="images/footer.png" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="document-container min-h-screen anniversaries">
+
+        <!-- 1. Hero Image Placeholder (FULL WIDTH of the document container) -->
+        <div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg">
+            <!-- This is the main full-width hero image placeholder -->
+            <img src="images/Picture9.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0;">
+            <p style="position: absolute; top: 150px; color: #fff; font-size: 22px !important;">JANUARY 2026 | ISSUE 311</p>
+        </div>
+
+        <!-- 2. Content Wrapper (Sidebar + Main Article) - This sets the flex direction -->
+        <div class="lg:flex">
+            <!-- Fixed Sidebar / Navigation (bg-ais-dark is already applied here) -->
+            <aside class="sidebar bg-ais-dark text-white lg:sticky lg:top-0 lg:h-screen p-6 pt-0 z-10">
+
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative" style="margin-top: 25px;">
+                        <input type="text" placeholder="Search Previous Issue" class="w-full py-2 pl-4 pr-10 rounded-full bg-ais-blue/70 text-sm text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-ais-accent transition duration-200" style="background-color: #fff;">
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" style="color: black;"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-1 text-sm font-semibold">
+                    <span class="nav-link hover:bg-white/10 flex justify-between items-center p-3 rounded-lg transition duration-200 ceo-btn" style="cursor: pointer;">
+                        CEO MESSAGE
+                    </span>
+                    <!-- Sub-links for active section -->
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 duration-200 sales-btn" style="cursor: pointer;">
+                        SALES
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ CONTEST</p>
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link block p-3 rounded-lg hover:bg-white/10 transition duration-200 service-btn" style="cursor: pointer;">
+                        SERVICE
+                    </span>
+                    <div class="pl-4 space-y-1 text-xs font-normal text-white/70 border-l border-white/20 ml-3">
+                        <p class="py-1" style="font-size: 0.75rem !important;">+ BRAGS</p>
+                    </div>
+
+                    <span class="nav-link  block p-3 rounded-lg hover:bg-white/10 transition duration-200 carrier-btn" style="cursor: pointer;">
+                        CARRIER NEWS
+                    </span>
+
+                    <span class="nav-link active block p-3 rounded-lg transition duration-200 anniversaries-btn" style="cursor: pointer;">
+                        ANNIVERSARIES
+                    </span>
+                    <img src="images/MLK.png" style="margin-top: 15px;" />
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-grow">
+
+                <div class="p-6 sm:p-10 lg:p-12 text-ais-text-dark" style="padding-top: 0;">
+
+                    <!-- Top Section with Title Block -->
+                    <div class="bg-ais-dark text-white p-6 -mx-6 sm:-mx-10 lg:-mx-12 mb-8 shadow-inner">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-xl sm:text-2xl font-black mb-4 sm:mb-0">Celebrating our Team Members:</h2>
+                        </div>
+                    </div>
+
+                    <!-- Article Body: Introduction and Main Image -->
+                    <article class="space-y-6">
+                        <div class="wrapper-section" style="border: solid black 1px; padding: 30px;">
+                            <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem; display: inline;">Happy Work Anniversary</h1>
+                            <img src="images/Picture18.png" style="display: inline; height: 50px; position: relative; top: -10px;" />
+
+                            <!-- Introductory Text (Expanded Content) -->
+                            <div class="text-base leading-relaxed" style="margin-top: 0;">
+                                <p class="mb-6">
+                                    Be sure to wish them a happy work anniversary on Kudos!
+                                </p>
+                            </div>
+
+                            <!-- ------------------------------------------------------------- -->
+                            <!-- UPDATED: Anniversary Photo Montage (Left, Middle Stacked, Right) -->
+                            <!-- The main container is a 3-column grid. The middle column uses a flex-col to stack two images. -->
+                            <!-- ------------------------------------------------------------- -->
+                            <div class="w-full mb-8 overflow-hidden shadow-xl grid grid-cols-3 gap-2 rounded-xl">
+
+                                <!-- Column 1: Single Image (Full Height) -->
+                                <img src="images/30years(1).png"
+                                     class="w-full h-full object-cover rounded-tl-xl rounded-bl-xl"
+                                     style="height: 400px; border-radius: 10px;"
+                                     alt="Anniversary Photo 1"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x600/6896c4/002c45?text=PHOTO+1+LEFT'" />
+
+                                <!-- Column 2: Two Stacked Images (using flex-col to fill the height) -->
+                                <img src="images/30years(2).png"
+                                     class="w-full h-full object-cover rounded-tl-xl rounded-bl-xl"
+                                     style="height: 400px; border-radius: 10px;"
+                                     alt="Anniversary Photo 2"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x600/6896c4/002c45?text=PHOTO+1+LEFT'" />
+
+                                <!-- Column 3: Single Image (Full Height) -->
+                                <img src="images/30years(3).png"
+                                     class="w-full h-full object-cover rounded-tr-xl rounded-br-xl"
+                                     style="height: 400px; border-radius: 10px;"
+                                     alt="Anniversary Photo 3"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/400x600/002c45/ffffff?text=PHOTO+4+RIGHT'" />
+                            </div>
+
+                            <h1 class="text-4xl sm:text-5xl font-extrabold text-ais-blue leading-tight mb-6" style="font-size: 2rem; text-align: center;">Rusella Hernandez</h1>
+                            <p style="text-align: center; font-weight: bold; margin-bottom: 1.5rem;">30 Years of Service Excellence</p>
+
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    This month, we’re thrilled to honor Rusella Hernandez as she celebrates an amazing 30
+                                    years of service excellence with AIS! Rusella kicked off her AIS journey on January 4,
+                                    1996, starting as a File Clerk. It didn’t take long for her natural customer service
+                                    superpowers to shine, and soon she stepped into handling policy renewals. From there,
+                                    she moved into underwriting, wore multiple hats across the service team, and today
+                                    continues to delight customers as a Sr. Customer Relations Specialist. Even with all the
+                                    roles she’s taken on, she admits she sometimes misses renewals…that job always
+                                    guaranteed happy customers because she could offer better rates and great options.
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    Cesar Contreras commended: Congratulations on reaching 30 years with AIS, Rusella!
+                                    What an awesome milestone. This achievement speaks volumes about your dedication
+                                    and commitment. Our customers consistently express their appreciation for your
+                                    approachable nature and clarity you bring to the insurance process. Your amazing work
+                                    ethic, professionalism and first-call resolution approach have set a standard that
+                                    inspires everyone around you. It’s been a pleasure to work alongside you and get to
+                                    know you over the past few years. Congrats again!
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    When she’s not working, Rusella enjoys bowling, getting involved in community
+                                    activities, and staying active with her church. A few fun facts: her favorite movie is Pretty
+                                    Woman, she loves Italian food, and she’s a huge Lakers fan! She hopes to travel more
+                                    soon, with Switzerland at the top of her list. And if she weren’t at AIS, she says she’d
+                                    likely be crunching numbers in an accounting or bookkeeping career.
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    As Rusella reflects on her impressive 30 year journey, one thing stands out above all
+                                    else: the people. As she puts it, “The people from day one. My coworkers, every single
+                                    one of them. We’re a family…we really are. Even though we work remotely and I don’t
+                                    see them often, our team meetings are always fun. It really is all about the people.” We
+                                    couldn’t agree more!
+                                </p>
+                            </div>
+                            <div class="text-base leading-relaxed">
+                                <p class="mb-6">
+                                    Please join us in celebrating this amazing milestone with Rusella! Her passion,
+                                    dedication, and allaround awesomeness continue to inspire everyone around her.
+                                </p>
+                            </div>
+
+                            <p style="text-align: center;">Congratulations, Rusella — here’s to 30 incredible years and many more to come!</p>
+
+                            <!--<div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                <img src="images/Picture10.png" style="width: 50%;" />
+                            </div>
+
+                            <p style="text-align: center; font-size: 16px !important; font-style: italic;">Front: Kelly McMillan, Tina Hernandez, Beverly Daudel, Candy Silverman, Mark Casas, Lani Elkin</p>
+                            <p style="text-align: center; font-size: 16px !important; font-style: italic;">Back: Lisa Edwards, Jamie Lopez, Silvia Ward, Mark Ribisi, Kimberley Felipe, Demond Jordan, Byron Taylor</p>-->
+                            <!-- ------------------------------------------------------------- -->
+                            <!-- 1. Long-Term Anniversaries (Milestones) -->
+                            <section class="mb-10 pt-4" style="padding-top: 3rem;">
+                                <h2 class="text-3xl font-black text-ais-dark mb-6 border-b-4 border-ais-accent pb-1" style="text-align: center;">More Anniversaries!</h2>
+
+                                <!-- Grid for different milestone years -->
+                                <div class="grid grid-cols-1 grid-cols-2 grid-cols-3 gap-6">
+
+                                    <!-- 15+ Years (Dark Accent) -->
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">25 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/25years.png" style="width: 200px; height: 260px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 20px; font-weight: bold;">Stephenie McBride</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Manager</li>
+                                        </ul>
+                                    </div>
+
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(1).png" style="width: 200px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 20px; font-weight: bold">Phong (Ken) Hoang</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Specialist III</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(2).png" style="width: 200px; height: 260px; border-radius: 10px; object-fit: cover;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 20px; font-weight: bold">Crystal Villegas</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Specialist III</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 grid-cols-2 grid-cols-3 gap-6" style="margin-top: 15px;">
+
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(3).png" style="width: 200px; height: 260px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: bold;">Lula Baker</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Specialist III</li>
+                                        </ul>
+                                    </div>
+
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(4).png" style="width: 200px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: bold;">Guillermina Harman</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Specialist III</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(5).png" style="width: 200px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: bold;">Derris Davis</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Manager</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 grid-cols-2 grid-cols-3 gap-6" style="margin-top: 15px;">
+
+                                    <!-- 15+ Years (Dark Accent) -->
+                                    <div>
+                                        <!--<h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">25 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(3).png" style="width: 200px; height: 260px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: 100;">Lula Baker</li>
+                                        </ul>-->
+                                    </div>
+
+
+                                    <div class="p-5 rounded-lg bg-ais-dark text-white shadow-xl">
+                                        <h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div>
+                                            <!--<img src="images/20years(4).png" style="width: 200px; border-radius: 10px;" />-->
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: bold;">Evelyna Zaragoza</li>
+                                            <li style="text-align: center; font-size: 17px; font-weight: normal;">Customer Relations Specialist III</li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <!--<h3 class="text-2xl font-extrabold text-ais-accent mb-3 border-b border-white/20 pb-2" style="color: #fff !important; text-align: center;">20 Years</h3>
+                                        <div class="w-full rounded-xl mb-6 overflow-hidden flex items-center justify-center">
+                                            <img src="images/20years(5).png" style="width: 200px; border-radius: 10px;" />
+                                        </div>
+                                        <ul class="space-y-2 text-sm font-semibold">
+                                            <li style="text-align: center; font-size: 19px; font-weight: 100">Derris Davis</li>
+                                        </ul>-->
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- AIS Cares -->
+                        <section class="mt-12" style="background-color: rgb(0 44 69); margin-top: 3rem;">
+
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+
+                                <div class="lg:col-span-7">
+                                    <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="padding-left: 30px !important; color: #fff; background-color: rgb(65, 107, 159); padding: 15px; margin-top: -15px">AIS Cares</h2>
+
+                                    <div class="space-y-3 text-ais-text-dark">
+                                        <img src="images/Picture19.png" style="display: inline; height: 70px; margin-left: 30px;" />
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="display: inline; color: #fff; padding: 15px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">Happy New Year!</h2>
+
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-bottom: 0; margin-bottom: 15px;">
+                                            Here’s to a fantastic 2026 filled with laughter, creativity, and adventure!
+                                            With winter in full swing, it’s the perfect time to embrace the season and stay physically
+                                            active, mentally engaged, and cozy-happy—whether you’re inside or out.
+                                        </p>
+
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="display: inline; color: #fff; padding: 30px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">Cozy Indoor Fun</h2>
+
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                            When it’s chilly outside, turn your home into the ultimate winter hangout:
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Movie or Series Marathon:</span> Pick a theme, grab the popcorn, and settle in.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Game Night Showdown:</span> Board games, cards, charades, or video
+                                            games—winner gets bragging rights.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Crafty Creations:</span> Make paper snowflakes, pinecone bird feeders, or build a
+                                            blanket fort worthy of legends.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Cook & Bake Together:</span> Try an international recipe or whip up family
+                                            favorites.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Storytime Magic:</span> Share family stories by a fire (or candle!) or curl up with a
+                                            great book.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Home Spa Day:</span> Winter-themed bath bombs, face masks, and total relaxation.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Learn Something New:</span> Take an online class, learn an instrument, or explore
+                                            a virtual destination.
+                                        </p>
+
+                                        <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="display: inline; color: #fff; padding: 30px; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">Outdoor Winter Adventures</h2>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0;">
+                                            Bundle up and enjoy the crisp air—snow or no snow!
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Ice Skating & Hockey:</span> Public skates or friendly games at local rinks.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Snow Day Fun (if you have snow):</span> Sledding, snowshoeing, tubing, snowball fights, or building epic snowmen.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Winter Walks & Hikes:</span> Quieter trails, birdwatching, frozen waterfalls, and hot chocolate rewards.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Snow-Free Exploring:</span> Hiking, biking, or geocaching on peaceful winter trails.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Stargazing:</span> Clear winter nights = brighter stars and magical views.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Nature Watching:</span> Feed birds, spot wildlife, or enjoy the stillness.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; padding-bottom: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Bonfires & Warm Drinks:</span> S'mores, hot cocoa, and cozy conversations.
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0; margin-left: 15px;">
+                                            <span style="font-weight: 700;">• Unique Winter Fun:</span> Ice lanterns, snow bowling, ice fishing, or even dog sledding if available!
+                                        </p>
+                                        <p class="mb-6" style="color: #fff; padding: 30px; padding-top: 0;">
+                                            No matter how you spend it, winter is full of ways to play, relax, and reconnect. So grab a blanket, lace up your boots,
+                                            and make this season unforgettable!
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col space-y-4 lg:col-span-5">
+                                    <div class="w-full overflow-hidden" style="flex: 1;">
+                                        <img src="images/movienight.png" style="width: 100%; height: 100%; display: block; object-fit: cover;" />
+                                    </div>
+
+                                    <div class="w-full overflow-hidden" style="flex: 1;">
+                                        <img src="images/hockey.jpg" style="width: 100%; height: 100%; display: block; object-fit: cover;" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <!--<div class="w-full h-48 sm:h-64 overflow-hidden bg-ais-light-blue/50 flex items-center justify-center shadow-lg" style="height: 100% !important; margin-top: 3rem;">-->
+                        <!-- This is the main full-width hero image placeholder -->
+                        <!--<img src="images/Picture20.png" class="text-3xl font-extrabold text-white opacity-90 p-4" style="width: 100%; padding: 0; height: 100%; object-fit: fill;">
+                        </div>-->
+
+                        <div class="mt-12 mx-auto">
+                            <div class="bg-white p-6 md:p-10 rounded-lg" style="padding: 0px !important;">
+
+                                <div class="mb-8" style="border: solid black 1px; border-bottom: none; margin-bottom: 0; margin-top: 3rem;">
+                                    <h2 class="text-2xl font-extrabold text-ais-blue mb-6 pb-2" style="background-color: rgb(0 44 69 / var(--tw-bg-opacity, 1)); color: #fff; padding:5px; padding-left: 15px;">Raffle Winners:</h2>
+                                    <div class="flex items-center mt-1" style="margin-top: 15px;">
+                                        <img src="images/Picture21.png" style="height: 35px; margin-right: 5px; margin-left: 20px;" />
+                                        <h2 class="text-2xl font-extrabold" style="color: black;">LA Kings & Lakers Raffle Winners:</h2>
+                                    </div>
+                                    <p class="mt-2" style="color: black; font-weight: normal; padding-bottom: 30px; margin-left: 20px;">Congratulations to last month's raffle winners!</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-5 gap-6" style="border: solid black 1px; border-top: none; padding-left: 10px; padding-right: 10px; padding-bottom: 30px;">
+
+                                    <div class="text-center">
+                                        <img src="images/raffle1.png" style="height: 300px; width: 300px; margin: auto;" alt="LA Kings Raffle Winner 1"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800" style="margin-top: 20px;">Mary Dimas</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/raffle2.png" style="height: 300px; width: 300px; margin: auto;" alt="LA Kings Raffle Winner 2"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800" style="margin-top: 20px;">Jennifer Rico</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/raffle3.png" style="height: 300px; width: 300px; margin: auto;" alt="LA Kings Raffle Winner 3"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800" style="margin-top: 20px;">Cindy Spence</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/raffle(4).jpg" style="height: 300px; width: 300px; margin: auto;" alt="LA Kings Raffle Winner 3"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800" style="margin-top: 20px;">Martin Espinoza</p>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <img src="images/raffle5.jpg" style="height: 300px; width: 300px; margin: auto; object-position: 50% 0%;" alt="LA Kings Raffle Winner 3"
+                                             class="w-full h-auto object-cover rounded-lg shadow-md mb-3" />
+                                        <p class="text-sm font-medium text-gray-800" style="margin-top: 20px;">Emmy Franco</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sales-brags-gradient text-white" style="margin-top: 3rem; margin-bottom: 3rem;">
+                            <section>
+                                <h2 class="text-3xl font-black mb-8" style="background-color: rgb(0 44 69); padding: 20px; height: 230px;">Read Our Lastest Blogs:</h2>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="margin-top: -170px; padding-left: 100px; padding-right: 100px;">
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <a target="_blank" href="https://blog.aisinsurance.com/2025/12/30/budgeting-apps-2025/">
+                                            <img src="images/blog1.jpg"
+                                                 alt="Blog image 1"
+                                                 style="width: 100%; height: 250px; object-fit: fill; display: block; border-radius: 25px;" />
+                                            <p style="color: black; padding-top: 10px;">5 Helpful Budgeting Apps to Use Throughout the New Year</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <a target="_blank" href="https://blog.aisinsurance.com/2025/12/22/life-changes-auto-insurance-review/">
+                                            <img src="images/blog2.jpg"
+                                                 alt="Blog image 2"
+                                                 style="width: 100%; height: 250px; object-fit: fill; display: block; border-radius: 25px;" />
+                                            <p style="color: black; padding-top: 10px;">6 Life Changes That Should Trigger an Auto Insurance Review</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="relative w-full overflow-hidden rounded-lg" style="text-align: center;">
+                                        <a target="_blank" href="https://blog.aisinsurance.com/2025/12/18/tree-damage-insurance/">
+                                            <img src="images/blog3.jpg"
+                                                 alt="Blog image 3"
+                                                 style="width: 100%; height: 250px; object-fit: fill; display: block; border-radius: 25px;" />
+                                            <p style="color: black; padding-top: 10px;">How Homeowners and Auto Insurance Cover Tree Damage</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+
+                        <section class="mt-12" style="background-image: url('images/Picture25.png'); margin-top: 0; background-size: cover; background-position: center; min-height: 300px; display: flex; align-items: center;">
+                            <div style="text-align: center; padding: 30px; width: 100%;" class="relative overflow-hidden">
+                                <h2 class="text-2xl font-extrabold mb-6 pb-2" style="color: #fff; padding: 15px;">Our Core Values:</h2>
+                                <div class="relative max-w-4xl mx-auto flex items-center">
+                                    <button onclick="moveValue(-1)" class="absolute left-0 z-10 p-2 text-white hover:text-yellow-400 transition-colors cursor-pointer" style="background: none; border: none;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                                    </button>
+                                    <div class="overflow-hidden w-full">
+                                        <div id="valueTrack" class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%);">
+                                            <div class="min-w-full px-12">
+                                                <h2 class="text-2xl font-extrabold mb-2" style="color: #f2b408;">WE OWN IT</h2>
+                                                <p class="text-lg" style="color: #fff; padding: 10px 30px;">
+                                                    We act with initiative and passion, balancing decisiveness and attention to detail to drive results.
+                                                </p>
+                                            </div>
+                                            <div class="min-w-full px-12">
+                                                <h2 class="text-2xl font-extrabold mb-2" style="color: #f2b408;">WE MOVE QUICKLY</h2>
+                                                <p class="text-lg" style="color: #fff; padding: 10px 30px;">
+                                                    We move with speed. We swiftly put ideas into action and can rapidly adapt in a changing world.
+                                                </p>
+                                            </div>
+                                            <div class="min-w-full px-12">
+                                                <h2 class="text-2xl font-extrabold mb-2" style="color: #f2b408;">WE DO THE RIGHT THING</h2>
+                                                <p class="text-lg" style="color: #fff; padding: 10px 30px;">
+                                                    We put people first. We treat people the way we want to be treated.
+                                                </p>
+                                            </div>
+                                            <div class="min-w-full px-12">
+                                                <h2 class="text-2xl font-extrabold mb-2" style="color: #f2b408;">WE SEEK A BETTER WAY</h2>
+                                                <p class="text-lg" style="color: #fff; padding: 10px 30px;">
+                                                    We are explorers, discovering new paths forward. We overcome challenges with bold and creative solutions and learn at every step.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button onclick="moveValue(1)" class="absolute right-0 z-10 p-2 text-white hover:text-yellow-400 transition-colors cursor-pointer" style="background: none; border: none;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                    </article>
+                    <!-- End Article Body -->
+
+                </div>
+
+                <!-- Footer Graphic -->
+                <footer class="text-center pt-8 border-t border-gray-200">
+                    <div class="text-3xl font-black text-ais-dark tracking-widest items-center justify-center space-x-2">
+                        <!-- Used object-cover to ensure the image scales nicely within the footer area -->
+                        <img class="w-full h-auto object-cover" src="images/footer.png" alt="Footer Graphic" onerror="this.onerror=null;this.src='https://placehold.co/1200x50/f0f2f5/393939?text=AIS+DEC+PAGE+FOOTER'" />
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
     <script>
-                // Placeholder for future interactivity if we decide to implement page switching or mobile menu toggles.
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all sales buttons (there are 2 - one in each sidebar)
+            const salesBtns = document.querySelectorAll('.sales-btn');
+            const ceoBtns = document.querySelectorAll('.ceo-btn');
+            const serviceBtns = document.querySelectorAll('.service-btn');
+            const carrierBtns = document.querySelectorAll('.carrier-btn');
+            const anniversariesBtns = document.querySelectorAll('.anniversaries-btn');
+
+            // Sales button clicks
+            salesBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelector('.ceo-message').style.display = 'none';
+                    document.querySelector('.sales').style.display = 'block';
+                    document.querySelector('.service').style.display = 'none';
+                    document.querySelector('.carrier').style.display = 'none';
+                    document.querySelector('.anniversaries').style.display = 'none';
+                    window.scrollTo(0, 0); // Scroll to top
+                });
+            });
+
+            // CEO button clicks
+            ceoBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelector('.ceo-message').style.display = 'block';
+                    document.querySelector('.sales').style.display = 'none';
+                    document.querySelector('.service').style.display = 'none';
+                    document.querySelector('.carrier').style.display = 'none';
+                    document.querySelector('.anniversaries').style.display = 'none';
+                    window.scrollTo(0, 0); // Scroll to top
+                });
+            });
+
+            serviceBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelector('.service').style.display = 'block';
+                    document.querySelector('.sales').style.display = 'none';
+                    document.querySelector('.ceo-message').style.display = 'none';
+                    document.querySelector('.carrier').style.display = 'none';
+                    document.querySelector('.anniversaries').style.display = 'none';
+                    window.scrollTo(0, 0); // Scroll to top
+                });
+            });
+
+            carrierBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelector('.carrier').style.display = 'block';
+                    document.querySelector('.service').style.display = 'none';
+                    document.querySelector('.sales').style.display = 'none';
+                    document.querySelector('.ceo-message').style.display = 'none';
+                    document.querySelector('.anniversaries').style.display = 'none';
+                    window.scrollTo(0, 0); // Scroll to top
+                });
+            });
+
+            anniversariesBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelector('.anniversaries').style.display = 'block';
+                    document.querySelector('.carrier').style.display = 'none';
+                    document.querySelector('.service').style.display = 'none';
+                    document.querySelector('.sales').style.display = 'none';
+                    document.querySelector('.ceo-message').style.display = 'none';                    
+                    window.scrollTo(0, 0); // Scroll to top
+                });
+            });
+
+            let currentSlide = 0;
+            let carouselAutoPlayTimer;
+
+            function updateSlideDisplay() {
+                const track = document.getElementById('carouselTrack');
+                const offset = currentSlide * 100;
+                track.style.transform = `translateX(-${offset}%)`;
+            }
+
+            function changeSlide(direction) {
+                // Clear timer when user manually clicks to prevent "double jumping"
+                resetCarouselTimer();
+                const track = document.getElementById('carouselTrack');
+                const totalSlides = track.children.length;
+                currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                updateSlideDisplay();
+            }
+
+            function resetCarouselTimer() {
+                clearInterval(carouselAutoPlayTimer);
+                const track = document.getElementById('carouselTrack');
+                const totalSlides = track.children.length;
+                carouselAutoPlayTimer = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateSlideDisplay();
+                }, 5000); // 8000ms = 8 seconds
+            }
+
+            // Start auto-play when page loads
+            resetCarouselTimer();
+
+
+            let valueIndex = 0;
+            const valueTrack = document.getElementById('valueTrack');
+            const totalValues = valueTrack.children.length;
+            let autoPlayTimer;
+
+            function updateValueDisplay() {
+                const offset = valueIndex * 100;
+                valueTrack.style.transform = `translateX(-${offset}%)`;
+            }
+
+            function moveValue(direction) {
+                // Clear timer when user manually clicks to prevent "double jumping"
+                resetTimer();
+                valueIndex = (valueIndex + direction + totalValues) % totalValues;
+                updateValueDisplay();
+            }
+
+            function resetTimer() {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = setInterval(() => {
+                    valueIndex = (valueIndex + 1) % totalValues;
+                    updateValueDisplay();
+                }, 8000); // 8000ms = 8 seconds
+            }
+
+            // Start auto-play when page loads
+            resetTimer();
+        });
     </script>
 </body>
 </html>
